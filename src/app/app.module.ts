@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { post } from './components/post/post.component'
-import { postList } from './components/postList/postList.component'
+import { Post } from './components/post/post.component'
+import { PostList } from './components/postList/postList.component'
+import Api from './services/api.service'
 
 @NgModule({
-  declarations: [AppComponent, post, postList],
+  declarations: [AppComponent, Post, PostList],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [Api],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
