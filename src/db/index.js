@@ -1,6 +1,6 @@
 const low = require('lowdb')
 const fsAdapter = require('lowdb/adapters/FileSync')
-const casual = require('casual')
+const faker = require('faker')
 const adapter = new fsAdapter(__dirname + '/db.json')
 const db = low(adapter)
 const id = require('shortid')
@@ -12,19 +12,14 @@ db.defaults({
 }).write()
 
 function fillRandomUser(userNumber = 10) {
-  console.log(db.get('users').value().length)
-  if (db.get('users').value().length) {
-    db.get('users')
-      .remove(() => true)
-      .write()
-  }
   let i = 0
   const users = []
   while (i < userNumber) {
     users.push({
       id: id.generate(),
-      email: casual.email,
-      password: casual.password
+      email: faker.internet.email(),
+      password: faker.internet.password(6),
+      avatar: faker.image.avatar()
     })
     i += 1
   }
@@ -44,8 +39,9 @@ function belongTo(parentCollection, childCollection, childNumber = 5) {
           .push({
             id: id.generate(),
             userId: e.id,
-            title: casual.title,
-            body: casual.text
+            title: faker.name.title(),
+            body: faker.lorem.paragraphs(),
+            image: faker.image.image()
           })
           .write()
         i += 1
@@ -53,8 +49,14 @@ function belongTo(parentCollection, childCollection, childNumber = 5) {
     })
     .write()
 }
+function reset() {
+  db.forIn((value, key) => {
+    db.set(key, []).write()
+  }).write()
+}
 
 function createDb() {
+  reset()
   fillRandomUser()
   const users = db.get('users')
   const posts = db.get('posts')

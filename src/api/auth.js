@@ -1,27 +1,31 @@
 const jwt = require('./lib')
 module.exports = function auth(req, res, next) {
+  console.log('auth executed')
+
   if (
-    req.method === 'post' ||
-    req.method === 'put' ||
-    req.method === 'delete'
+    req.method === 'POST' ||
+    req.method === 'PUT' ||
+    req.method === 'DELETE'
   ) {
-    const { bearer } = req.headers
-    if (!bearer) {
-      return res.status(404).send({
+    const authorization = req.get('authorization')
+    console.log(authorization, 'auth header')
+    if (!authorization) {
+      return res.status(401).send({
         error: 'invalid token'
       })
     }
-    jwt.verifyToken(bearer, token => {
-      if (token instanceof 'Error') {
-        return res.status(404).send({
-          error: token.message
+    const token = authorization.split(' ')[1]
+    console.log(token, 'filtered token')
+    jwt.verifyToken(token, (err, token) => {
+      if (err) {
+        return res.status(401).send({
+          error: err.message
         })
       } else {
-        res.send({
-          token
-        })
+        return next()
       }
     })
+  } else {
+    return next()
   }
-  next()
 }
