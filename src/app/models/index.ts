@@ -1,6 +1,15 @@
 export interface Post {
-  id: 'number'
+  id: 'string'
   title: 'string'
   body: 'string'
   userId: 'string'
+  user?: User
+}
+
+export interface User {
+  id: 'string'
+  email: 'string'
+  avatar: 'string'
+  postId: 'string'
+  password: 'string'
 }

@@ -1,3 +1,3 @@
 <ul>
-  <li><Post [title]="title" [body]="body"></Post></li>
+  <li *ngFor="let post of postList"><PostExtract [title]="post.title" [body]="post.body" [avatar]="post.avatar" [author]="post.author"></Post></li>
 </ul>
