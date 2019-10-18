@@ -4,11 +4,11 @@ import Api from 'src/app/services/api.service'
 
 @Component({
   templateUrl: './postList.template.html',
-  selector: 'Post'
+  selector: 'PostList'
 })
 export class PostList implements OnInit {
   postData: Post[]
-  postResource: string = 'https://localhost:3000/posts/_expand=user'
+  postResource: string = 'http://localhost:3000/posts?_expand=user'
   constructor(private http: Api) {}
 
   ngOnInit() {
