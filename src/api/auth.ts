@@ -1,4 +1,5 @@
-const jwt = require('./lib')
+import { verifyToken } from './lib'
+
 module.exports = function auth(req, res, next) {
   console.log('auth executed')
 
@@ -16,7 +17,7 @@ module.exports = function auth(req, res, next) {
     }
     const token = authorization.split(' ')[1]
     console.log(token, 'filtered token')
-    jwt.verifyToken(token, (err, token) => {
+    verifyToken(token, (err, token) => {
       if (err) {
         return res.status(401).send({
           error: err.message

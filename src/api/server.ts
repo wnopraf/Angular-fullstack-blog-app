@@ -4,8 +4,8 @@ const server = jsonServer.create()
 const router = jsonServer.router('./src/db/db.json')
 const middlewares = jsonServer.defaults()
 const bodyParser = jsonServer.bodyParser
-const login = require('./login')
-const auth = require('./auth')
+const login = require('./login.ts')
+const auth = require('./auth.ts')
 
 server.use(middlewares)
 server.use(bodyParser)

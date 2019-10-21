@@ -1,4 +1,4 @@
-const jwt = require('./lib')
+import { signToken } from './lib'
 const db = require('../db/db.json')
 const users = db.users
 module.exports = function login(req, res, next) {
@@ -8,7 +8,7 @@ module.exports = function login(req, res, next) {
     })
     if (user && user.password === req.body.password) {
       // return token
-      const token = jwt.signToken({ email: user.email })
+      const token = signToken({ email: user.email, avatar: user.avatar })
       return res.send({ token })
     } else {
       return res.status(401).send({ error: 'User or password are incorrect.' })
