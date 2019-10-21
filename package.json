@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api": "node src/api/server.js",
+    "api": "node src/api/server.ts",
     "db": "node src/db"
   },
   "private": true,
@@ -21,6 +21,8 @@
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
+    "@types/jsonwebtoken": "^8.3.5",
+    "dotenv": "^8.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
