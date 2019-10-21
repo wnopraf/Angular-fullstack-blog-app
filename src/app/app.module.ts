@@ -7,9 +7,10 @@ import { PostExtract } from './components/postExtract/postExtract.component'
 import { PostList } from './components/postList/postList.component'
 import Api from './services/api.service'
 import { HttpClientModule } from '@angular/common/http'
+import { PostComponent } from './components/Post/post.component'
 
 @NgModule({
-  declarations: [AppComponent, PostExtract, PostList],
+  declarations: [AppComponent, PostExtract, PostList, PostComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [Api],
   bootstrap: [AppComponent]
