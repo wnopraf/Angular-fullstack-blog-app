@@ -1,22 +1,15 @@
-import jwt from 'jsonwebtoken'
 import lowdb from 'lowdb'
-import LocalStorage from 'lowdb/adapters/localStorage'
+import LocalStorage from 'lowdb/adapters/LocalStorage'
 import { Injectable } from '@angular/core'
+import { decode } from 'jsonwebtoken'
 
 const adapter = new LocalStorage('db')
+
 @Injectable({ providedIn: 'root' })
 export class Store {
-  static db = new lowdb(adapter)
+  static db: any = lowdb(adapter)
 
-  set(key: string, value: any) {
-    Store.db.set(key, value)
-  }
-
-  decode(token: string) {
-    return jwt.decode({ complete: true })
-  }
-
-  get(key: string) {
-    return Store.db.get(key)
+  static decode(token: string): string | { [key: string]: any } {
+    return decode(token, { complete: true })
   }
 }
