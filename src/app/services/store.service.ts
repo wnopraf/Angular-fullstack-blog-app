@@ -10,6 +10,6 @@ export class Store {
   static db: any = lowdb(adapter)
 
   static decode(token: string): string | { [key: string]: any } {
-    return decode(token, { complete: true })
+    return decode(token)
   }
 }
