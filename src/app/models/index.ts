@@ -13,3 +13,10 @@ export interface User {
   postId: 'string'
   password: 'string'
 }
+
+export interface Token {
+  iat: number
+  exp: number
+  email: string
+  [key: string]: any
+}
