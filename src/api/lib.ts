@@ -1,7 +1,7 @@
 import { sign, verify } from 'jsonwebtoken'
-const dotEnv = require('dotenv')
+import { config } from 'dotenv'
 
-dotEnv.config()
+config()
 const key = process.env.API_KEY
 
 export function signToken(payLoad) {

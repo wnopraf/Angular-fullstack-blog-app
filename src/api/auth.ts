@@ -1,6 +1,6 @@
 import { verifyToken } from './lib'
 
-module.exports = function auth(req, res, next) {
+export default function auth(req, res, next) {
   console.log('auth executed')
 
   if (

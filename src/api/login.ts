@@ -1,7 +1,7 @@
 import { signToken } from './lib'
-const db = require('../db/db.json')
+import db from '../db/db.json'
 const users = db.users
-module.exports = function login(req, res, next) {
+export default function login(req, res, next) {
   if (req.body.email && req.body.password) {
     const user = users.find(e => {
       return e.email === req.body.email
