@@ -5,10 +5,10 @@
     "ng": "ng",
     "start": "npm run api & ng serve",
     "build": "ng build",
-    "test": "ng test --verbose false",
+    "test": "ng test --watch",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api": "node src/api/server.ts",
+    "api": "ts-node src/api/server.ts",
     "db": "node src/db"
   },
   "private": true,
@@ -36,6 +36,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^24.0.19",
+    "@types/json-server": "^0.14.2",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "faker": "^4.1.0",
@@ -50,8 +51,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  },
-  "jest": {
-    "verbose": false
   }
 }
