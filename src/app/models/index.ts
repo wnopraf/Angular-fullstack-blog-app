@@ -6,14 +6,15 @@ export interface Post {
   user?: User
 }
 
-export interface User {
+export interface User extends UserInfo {
   id: 'string'
-  email: 'string'
-  avatar: 'string'
   postId: 'string'
   password: 'string'
 }
-
+export interface UserInfo {
+  email: 'string'
+  avatar: 'string'
+}
 export interface Token {
   iat: number
   exp: number
