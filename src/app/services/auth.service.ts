@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Store } from './store.service'
+import { UserInfo } from '../models'
 
 const { db, decode } = Store
 
@@ -16,7 +17,7 @@ export default class {
     }
   }
 
-  getUser(): { email: string; avatar: string } {
+  getUser(): UserInfo {
     const email = db.get('decToken.email').value()
     const avatar = db.get('decToken.avatar').value()
     return { email, avatar }
