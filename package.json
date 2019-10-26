@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run api & ng serve",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test --watch",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "api": "ts-node src/api/server.ts",
-    "db": "node src/db"
+    "db": "node src/db",
+    "app": "npm run api & npm run start"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/router": "~8.2.8",
     "@types/jsonwebtoken": "^8.3.5",
     "dotenv": "^8.2.0",
+    "jwt-decode": "^2.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
