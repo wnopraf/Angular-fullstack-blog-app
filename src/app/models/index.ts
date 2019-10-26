@@ -2,6 +2,7 @@ export interface Post {
   id: 'string'
   title: 'string'
   body: 'string'
+  image: 'string'
   userId: 'string'
   user?: User
 }
