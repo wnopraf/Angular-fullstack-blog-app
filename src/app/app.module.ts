@@ -9,8 +9,19 @@ import Api from './services/api.service'
 import { HttpClientModule } from '@angular/common/http'
 import { PostComponent } from './components/Post/post.component'
 
+import authService from './services/auth.service'
+import { AuthHeader } from './components/authheader/authHeader.component'
+import { LoginComponent } from './components/login/login.component'
+
 @NgModule({
-  declarations: [AppComponent, PostExtract, PostList, PostComponent],
+  declarations: [
+    AppComponent,
+    PostExtract,
+    PostList,
+    PostComponent,
+    AuthHeader,
+    LoginComponent
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [Api],
   bootstrap: [AppComponent]

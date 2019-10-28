@@ -1,0 +1,7 @@
+<div [ngSwitch]="isLogged">
+  <a *ngSwitchCase="true" routerLink="user/dashboard">
+    <img [src]="user?.avatar" alt="" />
+    <span>{{ user?.email }}</span>
+  </a>
+  <a *ngSwitchCase="false" routerLink="/login">Login</a>
+</div>
