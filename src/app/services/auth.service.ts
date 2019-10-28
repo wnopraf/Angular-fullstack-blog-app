@@ -4,7 +4,9 @@ import { UserInfo } from '../models'
 
 const { db, decode } = Store
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export default class {
   auth(): boolean {
     if (!db.get('decToken').value()) return false
