@@ -1,0 +1,10 @@
+input:focus {
+  outline: none;
+}
+input.ng-dirty.ng-invalid,
+input.ng-touched.ng-invalid {
+  box-shadow: 0 0 3px 1px #e53030;
+}
+input.ng-valid {
+  box-shadow: 0 0 3px 1px #69e530;
+}
