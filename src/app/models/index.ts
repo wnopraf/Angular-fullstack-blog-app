@@ -22,3 +22,7 @@ export interface Token {
   email: string
   [key: string]: any
 }
+export interface LoginUser {
+  email: string
+  password: string
+}
