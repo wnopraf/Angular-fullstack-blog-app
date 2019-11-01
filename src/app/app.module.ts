@@ -9,7 +9,7 @@ import { PostList } from './components/postList/postList.component'
 
 import { PostComponent } from './components/Post/post.component'
 
-import { AuthHeader } from './components/authheader/authHeader.component'
+import { AuthHeader } from './components/authHeader/authHeader.component'
 import { LoginComponent } from './components/login/login.component'
 import { HttpClientModule } from '@angular/common/http'
 
