@@ -8,7 +8,8 @@ import { LoginComponent } from './components/login/login.component'
 const routes: Routes = [
   { path: '', component: PostList },
   { path: 'post/:id', component: PostComponent, resolve: { FetchPost } },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', redirectTo: '' }
 ]
 
 @NgModule({
