@@ -32,4 +32,7 @@ export default class {
     const decToken = decode(token)
     db.set('decToken', decToken).write()
   }
+  removeToken() {
+    db.setState({}).write()
+  }
 }

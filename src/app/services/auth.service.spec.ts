@@ -40,7 +40,7 @@ describe('Auth service', () => {
     expect(auth.auth()).toBe(false)
   })
   afterEach(() => {
-    db.setState({})
+    auth.removeToken()
     console.log('Current db state', db.getState())
   })
 })
