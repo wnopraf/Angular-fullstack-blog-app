@@ -10,13 +10,13 @@ export default class Api {
   get<T>(url: string): Observable<T> {
     return this.http.get<T>(url)
   }
-  post<T>(url: string, post: T): Observable<T> {
+  post<T>(url: string, post: T): Observable<any> {
     return this.http.post<T>(url, post)
   }
-  put<T>(url: string, post: T): Observable<T> {
+  put<T>(url: string, post: T): Observable<any> {
     return this.http.put<T>(url, post)
   }
-  delete<T>(url: string): Observable<T> {
+  delete<T>(url: string): Observable<any> {
     return this.http.delete<T>(url)
   }
 }
