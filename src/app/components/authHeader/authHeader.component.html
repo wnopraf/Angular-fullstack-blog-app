@@ -1,10 +1,11 @@
 <div [ngSwitch]="isLogged">
-  <span *ngSwitchCase="true">
-    <a routerLink="user/dashboard">
-      <img [src]="user?.avatar" alt="" />
+  <span *ngSwitchCase="true" class="inline-flex items-center">
+    <a routerLink="user/dashboard" class="inline-flex items-center">
+      <img [src]="user?.avatar" alt="" class="w-10 mr-2" />
       <span>{{ user?.email }}</span>
     </a>
-    <span (click)="logOut()">Logout</span>
+    &nbsp; | &nbsp;
+    <span (click)="logOut()" class="cursor-pointer">Logout</span>
   </span>
 
   <a *ngSwitchCase="false" routerLink="/login">Login</a>
