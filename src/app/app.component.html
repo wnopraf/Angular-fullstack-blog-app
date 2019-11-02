@@ -1,7 +1,11 @@
 <div>
-  <header>
-    <a routerLink="/">Posts</a>
-    <auth-header></auth-header>
+  <header class="py-3 bg-orange-400">
+    <div class="header container mx-auto px-2 flex">
+      <a class="mr-auto" routerLink="/">Posts</a>
+      <auth-header></auth-header>
+    </div>
   </header>
-  <router-outlet></router-outlet>
+  <div class="container mx-auto px-2">
+    <router-outlet></router-outlet>
+  </div>
 </div>
