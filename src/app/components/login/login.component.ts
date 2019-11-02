@@ -60,7 +60,7 @@ export class LoginComponent {
           break
         case 'email':
           msg.push(
-            `* You must enter a valid email pattern. ex: rpahilltop@gmail.com`
+            `* You must enter a valid email pattern. e.g. rpahilltop@gmail.com`
           )
       }
     }

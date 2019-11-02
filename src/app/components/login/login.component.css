@@ -8,3 +8,7 @@ input.ng-touched.ng-invalid {
 input.ng-valid {
   box-shadow: 0 0 3px 1px #69e530;
 }
+.password_validation_errors,
+.email_validation_errors {
+  top: 2.2rem;
+}
