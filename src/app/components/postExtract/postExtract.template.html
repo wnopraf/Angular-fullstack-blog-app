@@ -1,8 +1,8 @@
 <div>
-  <h1>{{ title }}</h1>
-  <div>
+  <h1 class="text-5xl py-3">{{ title }}</h1>
+  <div class="flex items-center mb-2">
+    <img [src]="avatar" alt="avatar" class="w-10 mr-2" />
     <span>{{ author }}</span>
-    <img [src]="avatar" alt="" />
   </div>
   <p>{{ extract() }}</p>
   <a routerLink="post/{{ id }}"> post</a>
