@@ -8,7 +8,7 @@ export class PostExtract {
   @Input() title
   @Input() body
   @Input() author
-  @Input() id
+  @Input() url
   @Input() avatar
 
   extract(): string {

@@ -1,6 +1,11 @@
 <ul>
   <li>
-    <PostExtract></PostExtract>
+    <PostExtract
+      [body]="body"
+      [author]="author"
+      [id]=""
+      [avatar]="avatar"
+    ></PostExtract>
     <div class="actions">
       <a [routerLink]="['/post', 'create']"></a>
       <a [routerLink]="['/post', post.id, 'update']"></a>
@@ -8,3 +13,5 @@
     </div>
   </li>
 </ul>
+
+title @Input() body @Input() author @Input() id @Input() avatar
