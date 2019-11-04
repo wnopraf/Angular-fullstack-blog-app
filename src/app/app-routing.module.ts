@@ -7,6 +7,7 @@ import { PostComponent } from './components/Post/post.component'
 import { LoginComponent } from './components/login/login.component'
 import { DashBoard } from './components/dashBoard/dashBoard.component'
 import { routeAuth } from './services/routeAuth.service'
+import { AuthPost } from './components/authPost/authPost.component'
 
 const routes: Routes = [
   { path: '', component: PostList },
@@ -15,9 +16,12 @@ const routes: Routes = [
   { path: 'logout', redirectTo: '' },
   {
     path: 'user/dashboard',
-    component: DashBoard,
     canActivate: [routeAuth],
-    resolve: { FetchPosts }
+    resolve: { FetchPosts },
+    children: [
+      { path: '', component: DashBoard },
+      { path: 'post/:id', component: AuthPost, resolve: { FetchPost } }
+    ]
   }
 ]
 
