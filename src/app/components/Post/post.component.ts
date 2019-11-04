@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Post } from 'src/app/models'
 
 @Component({
-  selector: 'PostComponent',
+  selector: 'post',
   templateUrl: './post.template.html'
 })
 export class PostComponent {
