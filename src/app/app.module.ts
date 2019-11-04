@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component'
 import { HttpClientModule } from '@angular/common/http'
 import { DashBoard } from './components/dashBoard/dashBoard.component'
 import { AuthLInks } from './components/authLinks/authLinks.component'
+import { AuthPost } from './components/authPost/authPost.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthLInks } from './components/authLinks/authLinks.component'
     AuthHeader,
     LoginComponent,
     DashBoard,
-    AuthLInks
+    AuthLInks,
+    AuthPost
   ],
   imports: [
     BrowserModule,
