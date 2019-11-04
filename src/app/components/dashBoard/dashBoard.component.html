@@ -1,17 +1,15 @@
 <ul>
-  <li>
+  <li *ngFor="let post of userPosts">
     <PostExtract
-      [body]="body"
-      [author]="author"
-      [id]=""
-      [avatar]="avatar"
+      [body]="post.body"
+      [author]="post.user.email"
+      [url]="'post/' + post.id"
+      [avatar]="post.user.avatar"
     ></PostExtract>
     <div class="actions">
-      <a [routerLink]="['/post', 'create']"></a>
-      <a [routerLink]="['/post', post.id, 'update']"></a>
-      <a [routerLink]="['/post', post.id, 'delete']"></a>
+      <a [routerLink]="['create']"></a>
+      <a [routerLink]="[post.id, 'update']"></a>
+      <a [routerLink]="[post.id, 'delete']"></a>
     </div>
   </li>
 </ul>
-
-title @Input() body @Input() author @Input() id @Input() avatar

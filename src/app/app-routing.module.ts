@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule, Route } from '@angular/router'
 import { PostList } from './components/postList/postList.component'
 import FetchPost from './components/Post/postData.service'
+import { FetchPosts } from './services/fetchPosts.service'
 import { PostComponent } from './components/Post/post.component'
 import { LoginComponent } from './components/login/login.component'
 import { DashBoard } from './components/dashBoard/dashBoard.component'
@@ -12,7 +13,12 @@ const routes: Routes = [
   { path: 'post/:id', component: PostComponent, resolve: { FetchPost } },
   { path: 'login', component: LoginComponent },
   { path: 'logout', redirectTo: '' },
-  { path: 'dashboard', component: DashBoard, canActivate: [routeAuth] }
+  {
+    path: 'user/dashboard',
+    component: DashBoard,
+    canActivate: [routeAuth],
+    resolve: { FetchPosts }
+  }
 ]
 
 @NgModule({

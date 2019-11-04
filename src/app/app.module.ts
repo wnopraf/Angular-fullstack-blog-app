@@ -12,6 +12,7 @@ import { PostComponent } from './components/Post/post.component'
 import { AuthHeader } from './components/authHeader/authHeader.component'
 import { LoginComponent } from './components/login/login.component'
 import { HttpClientModule } from '@angular/common/http'
+import { DashBoard } from './components/dashBoard/dashBoard.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http'
     PostList,
     PostComponent,
     AuthHeader,
-    LoginComponent
+    LoginComponent,
+    DashBoard
   ],
   imports: [
     BrowserModule,
