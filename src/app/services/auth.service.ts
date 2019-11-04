@@ -20,9 +20,10 @@ export default class {
   }
 
   getUser(): UserInfo {
-    const email = db.get('decToken.email').value()
-    const avatar = db.get('decToken.avatar').value()
-    return { email, avatar }
+    const { id, email, avatar } = db.get('decToken').value()
+    /* const email = db.get('decToken.email').value()
+    const avatar = db.get('decToken.avatar').value() */
+    return { id, email, avatar }
   }
   getRawToken(): string {
     return db.get('rawToken').value()

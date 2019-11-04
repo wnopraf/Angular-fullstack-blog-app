@@ -4,9 +4,9 @@ import { Store } from './store.service'
 
 const iat = Math.floor(Date.now() / 1000)
 const mockToken: Token = {
+  id: '6sis6ky',
   email: 'reto@baylon.com ',
   avatar: 'http://www.getimage.com/reto.jpg',
-
   iat,
   exp: iat + 60 * 60 * 3
 }
@@ -26,6 +26,7 @@ describe('Auth service', () => {
     db.set('decToken', mockToken).write()
     console.log(db.getState())
     expect(auth.getUser()).toEqual({
+      id: '6sis6ky',
       email: 'reto@baylon.com ',
       avatar: 'http://www.getimage.com/reto.jpg'
     })
