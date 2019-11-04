@@ -8,7 +8,11 @@ export default function login(req, res, next) {
     })
     if (user && user.password === req.body.password) {
       // return token
-      const token = signToken({ email: user.email, avatar: user.avatar })
+      const token = signToken({
+        id: user.id,
+        email: user.email,
+        avatar: user.avatar
+      })
       return res.send({ token })
     } else {
       return res.status(401).send({ error: 'User or password are incorrect.' })
