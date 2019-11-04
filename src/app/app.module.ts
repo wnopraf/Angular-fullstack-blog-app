@@ -13,6 +13,7 @@ import { AuthHeader } from './components/authHeader/authHeader.component'
 import { LoginComponent } from './components/login/login.component'
 import { HttpClientModule } from '@angular/common/http'
 import { DashBoard } from './components/dashBoard/dashBoard.component'
+import { AuthLInks } from './components/authLinks/authLinks.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashBoard } from './components/dashBoard/dashBoard.component'
     PostComponent,
     AuthHeader,
     LoginComponent,
-    DashBoard
+    DashBoard,
+    AuthLInks
   ],
   imports: [
     BrowserModule,

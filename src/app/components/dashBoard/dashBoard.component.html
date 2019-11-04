@@ -6,10 +6,6 @@
       [url]="'post/' + post.id"
       [avatar]="post.user.avatar"
     ></PostExtract>
-    <div class="actions">
-      <a [routerLink]="['create']"></a>
-      <a [routerLink]="[post.id, 'update']"></a>
-      <a [routerLink]="[post.id, 'delete']"></a>
-    </div>
+    <auth-links [id]="post.id"></auth-links>
   </li>
 </ul>
