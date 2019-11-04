@@ -8,11 +8,11 @@ export interface Post {
 }
 
 export interface User extends UserInfo {
-  id: 'string'
   postId: 'string'
   password: 'string'
 }
 export interface UserInfo {
+  id: 'string'
   email: 'string'
   avatar: 'string'
 }
