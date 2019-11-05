@@ -40,7 +40,7 @@ export class LoginComponent {
     this.email = this.loginForm.get('email') as FormControl
     this.password = this.loginForm.get('password') as FormControl
   }
-  displayErrors(errors: { [key: string]: any }, field: string) {
+  displayErrors(errors: { [key: string]: any }) {
     console.log(errors, errors)
     let msg: string[] = []
     for (const [errorKey, errorMsg] of Object.entries(errors)) {
