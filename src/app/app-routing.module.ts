@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component'
 import { DashBoard } from './components/dashBoard/dashBoard.component'
 import { routeAuth } from './services/routeAuth.service'
 import { AuthPost } from './components/authPost/authPost.component'
+import { NotAuth } from './components/notAuth/notAuthorized.component'
 
 const routes: Routes = [
   { path: '', component: PostList },
@@ -22,7 +23,8 @@ const routes: Routes = [
       { path: '', component: DashBoard },
       { path: 'post/:id', component: AuthPost, resolve: { FetchPost } }
     ]
-  }
+  },
+  { path: 'not-authorized', component: NotAuth }
 ]
 
 @NgModule({

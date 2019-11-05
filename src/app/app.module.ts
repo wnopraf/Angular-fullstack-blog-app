@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { DashBoard } from './components/dashBoard/dashBoard.component'
 import { AuthLInks } from './components/authLinks/authLinks.component'
 import { AuthPost } from './components/authPost/authPost.component'
+import { NotAuth } from './components/notAuth/notAuthorized.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthPost } from './components/authPost/authPost.component'
     LoginComponent,
     DashBoard,
     AuthLInks,
-    AuthPost
+    AuthPost,
+    NotAuth
   ],
   imports: [
     BrowserModule,
