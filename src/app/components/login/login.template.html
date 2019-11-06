@@ -17,10 +17,10 @@
       />
 
       <ul
-        class="email_validation_errors absolute inset- w-full py-2 text-xxs text-red-600"
+        class="email_validation_errors absolute w-full py-2 text-xxs text-red-600"
         *ngIf="(email.dirty || email.touched) && email.errors"
       >
-        <li *ngFor="let error of displayErrors(email.errors, 'email')">
+        <li *ngFor="let error of displayErrors(email.errors)">
           {{ error }}
         </li>
       </ul>
