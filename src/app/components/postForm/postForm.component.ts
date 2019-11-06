@@ -1,6 +1,9 @@
-import { Input } from '@angular/core'
+import { Input, Component } from '@angular/core'
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
-
+@Component({
+  selector: 'post-form',
+  templateUrl: './postForm.component.html'
+})
 export class PostForm {
   @Input() title: string
   @Input() body: string
