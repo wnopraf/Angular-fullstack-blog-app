@@ -2,12 +2,13 @@ import { Component } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 import Api from 'src/app/services/api.service'
 import Faker from 'faker'
+import { HttpErrorResponse } from '@angular/common/http'
 @Component({
   selector: 'create-post',
   templateUrl: './createPost.component.html'
 })
 export class CreatePost {
-  validationServer: ErrorConstructor = null
+  validationServer: HttpErrorResponse = null
   constructor(private http: Api) {}
   submit(form: FormGroup) {
     const { postTile: title, postBody: body } = form.controls

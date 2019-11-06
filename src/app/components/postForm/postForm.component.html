@@ -1,4 +1,5 @@
 <form
+  [formGroup]="form"
   (ngSubmit)="submitAction(form)"
   class="flex flex-col justify-center items-center"
 >
@@ -8,31 +9,34 @@
 
     <ul
       class="errors"
-      *ngIf="(postTitle.dirty || postTitle.touch) && postTitle.errors"
+      *ngIf="(postTitle.dirty || postTitle.touched) && postTitle.errors"
     >
-      <li *ngFor="lef; error: of; dispayErros: postTitle.errors">
+      <li *ngFor="let error of displayErrors(postTitle.errors)">
         {{ error }}
       </li>
     </ul>
   </div>
 
   <div class="form-control">
-    <label for="post-body">Post title</label>
+    <label for="post-body">Post body</label>
     <textarea id="post-body" formControlName="postBody"></textarea>
 
     <ul
       class="errors"
-      *ngIf="(postBody.dirty || postBody.touch) && postBody.errors"
+      *ngIf="(postBody.dirty || postBody.touched) && postBody.errors"
     >
-      <li *ngFor="lef; error: of; dispayErros: postBody.errors">{{ error }}</li>
+      <li *ngFor="let error of displayErrors(postBody.errors)">{{ error }}</li>
     </ul>
   </div>
   <div class="submit">
-    <button type="submit" [enabled]="(form.dirty || form.touch) && form.valid">
+    <button
+      type="submit"
+      [disabled]="(form.dirty || form.touched) && form.invalid"
+    >
       Enviar
     </button>
   </div>
   <p *ngIf="serverValidation" class="server-validation">
-    {{ server - validation.message }}
+    {{ serverValidation.message }}
   </p>
 </form>

@@ -1,5 +1,6 @@
 import { Input, Component } from '@angular/core'
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
+import { HttpErrorResponse } from '@angular/common/http'
 @Component({
   selector: 'post-form',
   templateUrl: './postForm.component.html'
@@ -8,10 +9,14 @@ export class PostForm {
   @Input() title: string
   @Input() body: string
   @Input() submitAction: (form: FormGroup) => void
-  @Input() serverValidation: ErrorConstructor
+  @Input() serverValidation: HttpErrorResponse
   form: FormGroup
-  postTitle: FormControl
-  postBody: FormControl
+  get postTitle(): FormControl {
+    return this.form.get('postTitle') as FormControl
+  }
+  get postBody(): FormControl {
+    return this.form.get('postBody') as FormControl
+  }
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
@@ -23,11 +28,9 @@ export class PostForm {
       postBody: fb.control(this.body || '', [
         Validators.required,
         Validators.minLength(10),
-        Validators.minLength(1000)
+        Validators.maxLength(1000)
       ])
     })
-    this.postBody = this.form.controls.postBody as FormControl
-    this.postTitle = this.form.controls.postTitle as FormControl
   }
 
   displayErrors(errors: { [key: string]: any }) {
