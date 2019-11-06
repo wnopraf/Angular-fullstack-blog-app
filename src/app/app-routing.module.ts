@@ -22,8 +22,8 @@ const routes: Routes = [
     resolve: { FetchPosts },
     children: [
       { path: '', component: DashBoard },
-      { path: 'post/:id', component: AuthPost, resolve: { FetchPost } },
-      { path: 'post/new', component: CreatePost }
+      { path: 'post/new', component: CreatePost },
+      { path: 'post/:id', component: AuthPost, resolve: { FetchPost } }
     ]
   },
   { path: 'not-authorized', component: NotAuth }
