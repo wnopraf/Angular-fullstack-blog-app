@@ -5,7 +5,7 @@ export class PostForm {
   @Input() title: string
   @Input() body: string
   @Input() submitAction: (form: FormGroup) => void
-  @Input() serverValidation: object
+  @Input() serverValidation: ErrorConstructor
   form: FormGroup
   postTitle: FormControl
   postBody: FormControl
