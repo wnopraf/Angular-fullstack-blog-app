@@ -9,6 +9,7 @@ import { DashBoard } from './components/dashBoard/dashBoard.component'
 import { routeAuth } from './services/routeAuth.service'
 import { AuthPost } from './components/authPost/authPost.component'
 import { NotAuth } from './components/notAuth/notAuthorized.component'
+import { CreatePost } from './components/createPost/createPost.component'
 
 const routes: Routes = [
   { path: '', component: PostList },
@@ -21,7 +22,8 @@ const routes: Routes = [
     resolve: { FetchPosts },
     children: [
       { path: '', component: DashBoard },
-      { path: 'post/:id', component: AuthPost, resolve: { FetchPost } }
+      { path: 'post/:id', component: AuthPost, resolve: { FetchPost } },
+      { path: 'post/new', component: CreatePost }
     ]
   },
   { path: 'not-authorized', component: NotAuth }

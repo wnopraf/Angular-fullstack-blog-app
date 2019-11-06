@@ -17,6 +17,7 @@ import { AuthLInks } from './components/authLinks/authLinks.component'
 import { AuthPost } from './components/authPost/authPost.component'
 import { NotAuth } from './components/notAuth/notAuthorized.component'
 import { PostForm } from './components/postForm/postForm.component'
+import { CreatePost } from './components/createPost/createPost.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PostForm } from './components/postForm/postForm.component'
     AuthLInks,
     AuthPost,
     NotAuth,
-    PostForm
+    PostForm,
+    CreatePost
   ],
   imports: [
     BrowserModule,
