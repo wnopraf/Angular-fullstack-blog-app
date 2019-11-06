@@ -16,6 +16,7 @@ import { DashBoard } from './components/dashBoard/dashBoard.component'
 import { AuthLInks } from './components/authLinks/authLinks.component'
 import { AuthPost } from './components/authPost/authPost.component'
 import { NotAuth } from './components/notAuth/notAuthorized.component'
+import { PostForm } from './components/postForm/postForm.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NotAuth } from './components/notAuth/notAuthorized.component'
     DashBoard,
     AuthLInks,
     AuthPost,
-    NotAuth
+    NotAuth,
+    PostForm
   ],
   imports: [
     BrowserModule,

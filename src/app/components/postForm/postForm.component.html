@@ -1,0 +1,38 @@
+<form
+  (ngSubmit)="submitAction(form)"
+  class="flex flex-col justify-center items-center"
+>
+  <div class="form-control">
+    <label for="post-title">Post title</label>
+    <textarea id="post-title" formControlName="postTitle"></textarea>
+
+    <ul
+      class="errors"
+      *ngIf="(postTitle.dirty || postTitle.touch) && postTitle.errors"
+    >
+      <li *ngFor="lef; error: of; dispayErros: postTitle.errors">
+        {{ error }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-control">
+    <label for="post-body">Post title</label>
+    <textarea id="post-body" formControlName="postBody"></textarea>
+
+    <ul
+      class="errors"
+      *ngIf="(postBody.dirty || postBody.touch) && postBody.errors"
+    >
+      <li *ngFor="lef; error: of; dispayErros: postBody.errors">{{ error }}</li>
+    </ul>
+  </div>
+  <div class="submit">
+    <button type="submit" [enabled]="(form.dirty || form.touch) && form.valid">
+      Enviar
+    </button>
+  </div>
+  <p *ngIf="serverValidation" class="server-validation">
+    {{ server - validation.message }}
+  </p>
+</form>
