@@ -10,8 +10,9 @@ const { db, decode } = Store
 export default class {
   auth(): boolean {
     if (!db.get('decToken').value()) return false
-    const expTime =
-      db.get('decToken.exp').value() + db.get('decToken.iat').value()
+
+    const expTime = db.get('decToken.exp').value()
+
     if (expTime <= Math.floor(Date.now() / 1000)) {
       return false
     } else {
@@ -21,8 +22,7 @@ export default class {
 
   getUser(): UserInfo {
     const { id, email, avatar } = db.get('decToken').value()
-    /* const email = db.get('decToken.email').value()
-    const avatar = db.get('decToken.avatar').value() */
+
     return { id, email, avatar }
   }
   getRawToken(): string {
