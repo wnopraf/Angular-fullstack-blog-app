@@ -1,6 +1,6 @@
 import { Input, Component } from '@angular/core'
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
-import { HttpErrorResponse } from '@angular/common/http'
+
 @Component({
   selector: 'post-form',
   templateUrl: './postForm.component.html'
@@ -9,7 +9,7 @@ export class PostForm {
   @Input() title: string
   @Input() body: string
   @Input() submitAction: (form: FormGroup) => void
-  @Input() serverValidation: HttpErrorResponse
+
   form: FormGroup
   get postTitle(): FormControl {
     return this.form.get('postTitle') as FormControl
