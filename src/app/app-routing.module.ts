@@ -20,6 +20,7 @@ const routes: Routes = [
     path: 'user/dashboard',
     canActivate: [routeAuth],
     resolve: { FetchPosts },
+    runGuardsAndResolvers: 'always',
     children: [
       { path: '', component: DashBoard },
       { path: 'post/new', component: CreatePost },
