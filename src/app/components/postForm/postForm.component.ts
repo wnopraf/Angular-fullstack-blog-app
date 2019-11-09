@@ -1,11 +1,11 @@
-import { Input, Component } from '@angular/core'
+import { Input, Component, OnInit } from '@angular/core'
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'post-form',
   templateUrl: './postForm.component.html'
 })
-export class PostForm {
+export class PostForm implements OnInit {
   @Input() title: string
   @Input() body: string
   @Input() submitAction: (form: FormGroup) => void
@@ -18,20 +18,7 @@ export class PostForm {
     return this.form.get('postBody') as FormControl
   }
 
-  constructor(fb: FormBuilder) {
-    this.form = fb.group({
-      postTitle: fb.control(this.title || '', [
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(20)
-      ]),
-      postBody: fb.control(this.body || '', [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(1000)
-      ])
-    })
-  }
+  constructor(private fb: FormBuilder) {}
 
   displayErrors(errors: { [key: string]: any }) {
     console.log(errors, errors)
@@ -58,5 +45,19 @@ export class PostForm {
       }
     }
     return msg
+  }
+  ngOnInit() {
+    this.form = this.fb.group({
+      postTitle: this.fb.control(this.title || '', [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(20)
+      ]),
+      postBody: this.fb.control(this.body || '', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(1000)
+      ])
+    })
   }
 }
