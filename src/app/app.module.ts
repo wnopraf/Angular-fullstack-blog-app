@@ -18,6 +18,7 @@ import { AuthPost } from './components/authPost/authPost.component'
 import { NotAuth } from './components/notAuth/notAuthorized.component'
 import { PostForm } from './components/postForm/postForm.component'
 import { CreatePost } from './components/createPost/createPost.component'
+import { UpdatePost } from './components/updatePost/updatePost.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CreatePost } from './components/createPost/createPost.component'
     AuthPost,
     NotAuth,
     PostForm,
-    CreatePost
+    CreatePost,
+    UpdatePost
   ],
   imports: [
     BrowserModule,

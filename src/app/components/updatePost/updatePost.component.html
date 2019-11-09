@@ -1,0 +1,8 @@
+<div class="update-post">
+  <post-form
+    *ngIf="post"
+    [title]="post.title"
+    [body]="post.body"
+    [submitAction]="submit"
+  ></post-form>
+</div>
