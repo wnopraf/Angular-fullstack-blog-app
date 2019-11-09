@@ -51,7 +51,7 @@ export class PostForm implements OnInit {
       postTitle: this.fb.control(this.title || '', [
         Validators.required,
         Validators.minLength(5),
-        Validators.maxLength(20)
+        Validators.maxLength(50)
       ]),
       postBody: this.fb.control(this.body || '', [
         Validators.required,
