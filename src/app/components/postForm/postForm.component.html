@@ -1,14 +1,18 @@
 <form
   [formGroup]="form"
   (ngSubmit)="submitAction(form)"
-  class="flex flex-col justify-center items-center"
+  class="flex flex-col justify-center items-center pt-20"
 >
-  <div class="form-control">
-    <label for="post-title">Post title</label>
-    <textarea id="post-title" formControlName="postTitle"></textarea>
+  <div class="form-control w-1/2">
+    <label for="post-title" class="block mb-3 text-xl ">Post title</label>
+    <textarea
+      class="border w-full"
+      id="post-title"
+      formControlName="postTitle"
+    ></textarea>
 
     <ul
-      class="errors"
+      class="errors text-xxs text-red-600"
       *ngIf="(postTitle.dirty || postTitle.touched) && postTitle.errors"
     >
       <li *ngFor="let error of displayErrors(postTitle.errors)">
@@ -17,21 +21,27 @@
     </ul>
   </div>
 
-  <div class="form-control">
-    <label for="post-body">Post body</label>
-    <textarea id="post-body" formControlName="postBody"></textarea>
+  <div class="form-control w-1/2 mt-2">
+    <label for="post-body" class="block mb-3 text-xl ">Post body</label>
+    <textarea
+      class="border h-40 w-full"
+      id="post-body"
+      formControlName="postBody"
+    ></textarea>
 
     <ul
-      class="errors"
+      class="errors text-xxs text-red-600"
       *ngIf="(postBody.dirty || postBody.touched) && postBody.errors"
     >
       <li *ngFor="let error of displayErrors(postBody.errors)">{{ error }}</li>
     </ul>
   </div>
-  <div class="submit">
+  <div class="submit mt-3">
     <button
       type="submit"
       [disabled]="(form.dirty || form.touched) && form.invalid"
+      [ngClass]="{ 'bg-red-400': form.invalid, 'bg-green-400': form.valid }"
+      class="py-2 px-4"
     >
       Enviar
     </button>
