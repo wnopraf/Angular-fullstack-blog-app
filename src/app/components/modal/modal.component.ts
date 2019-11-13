@@ -13,26 +13,14 @@ export class Modal {
   @Input() isOpen: boolean
 
   confirmModal(confirmation?: string) {
-    console.log('confirmation', confirmation, this.openModal)
-
-    if (confirmation) {
-      switch (confirmation) {
-        case 'yes':
-          this.confirmLogic()
-          document.body.style.overflow = 'visible'
-
-          return
-        case 'no':
-          console.log('no clause')
-
-          this.switchState()
-          document.body.style.overflow = 'visible'
-
-          return
-      }
-    } else {
-      this.switchState()
-      document.body.style.overflow = 'hidden'
+    switch (confirmation) {
+      case 'yes':
+        this.confirmLogic()
+        document.body.classList.remove('overflow-hidden')
+        return
+      case 'no':
+        this.switchState()
+        return
     }
   }
 }
