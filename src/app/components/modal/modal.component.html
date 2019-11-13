@@ -1,0 +1,18 @@
+<div
+  class="modal fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-gray-600 opacity-100"
+>
+  <div class="modal_response bg-white px-12 py-6 border border-orange-400">
+    <h3>{{ modalMessage }}</h3>
+    <p>
+      <small class="text-red-600">* {{ confirmationMessage }}</small>
+    </p>
+    <div class="modal_buttons mt-3 flex justify-between items-center px-3 py-6">
+      <button class="modal_button bg-red-600" (click)="confirmModal('yes')">
+        yes
+      </button>
+      <button class="modal_button bg-green-600" (click)="confirmModal('no')">
+        no
+      </button>
+    </div>
+  </div>
+</div>

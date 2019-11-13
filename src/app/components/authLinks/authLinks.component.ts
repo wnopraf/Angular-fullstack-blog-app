@@ -10,14 +10,15 @@ import { Router } from '@angular/router'
 })
 export class AuthLInks {
   @Input() id
-  openModal: boolean
-
-  constructor(
-    private http: HttpClient,
-    private auth: authService,
-    private router: Router
-  ) {}
-  delete() {
+  open: boolean
+  showModal = () => {
+    if (this.open) {
+      this.open = false
+    } else {
+      this.open = true
+    }
+  }
+  delete = () => {
     if (this.auth.auth()) {
       const headers = {
         headers: { authorization: 'bearer ' + this.auth.getRawToken() }
@@ -37,24 +38,9 @@ export class AuthLInks {
       this.router.navigate(['/login'])
     }
   }
-
-  confirmModal(confirmation?: string) {
-    if (confirmation) {
-      switch (confirmation) {
-        case 'yes':
-          this.delete()
-          document.body.style.overflow = 'visible'
-
-          return
-        case 'no':
-          this.openModal = false
-          document.body.style.overflow = 'visible'
-
-          return
-      }
-    } else {
-      this.openModal = true
-      document.body.style.overflow = 'hidden'
-    }
-  }
+  constructor(
+    private http: HttpClient,
+    private auth: authService,
+    private router: Router
+  ) {}
 }
