@@ -1,28 +1,27 @@
-<div class="actions">
-  <a [routerLink]="['post', 'new']">New Post</a>
-  <a [routerLink]="['post', id, 'update']">Update Post</a>
-  <button (click)="confirmModal()">Delete post</button>
-  <div
-    class="modal fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-gray-600 opacity-75"
-    *ngIf="openModal"
+<div class="actions py-4">
+  <a [routerLink]="['post', id, 'update']" class="bt bg-yellow-300 mr-2"
+    >Update</a
   >
-    <div class="modal_response bg-white px-12 py-6 border border-orange-400">
-      <h3>Do you want to remove this post ?</h3>
-      <p>
-        <small class="text-red-600"
-          >* If you accept the post will be permanetly deleted</small
-        >
-      </p>
-      <div
-        class="modal_buttons mt-3 flex justify-between items-center px-3 py-6"
+  <button (click)="confirmModal()" class="bt bg-red-400">Delete</button>
+</div>
+<div
+  class="modal fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-gray-600 opacity-100"
+  *ngIf="openModal"
+>
+  <div class="modal_response bg-white px-12 py-6 border border-orange-400">
+    <h3>Do you want to remove this post ?</h3>
+    <p>
+      <small class="text-red-600"
+        >* If you accept the post will be permanetly deleted</small
       >
-        <button class="modal_button bg-red-600" (click)="confirmModal('yes')">
-          yes
-        </button>
-        <button class="modal_button bg-green-600" (click)="confirmModal('no')">
-          no
-        </button>
-      </div>
+    </p>
+    <div class="modal_buttons mt-3 flex justify-between items-center px-3 py-6">
+      <button class="modal_button bg-red-600" (click)="confirmModal('yes')">
+        yes
+      </button>
+      <button class="modal_button bg-green-600" (click)="confirmModal('no')">
+        no
+      </button>
     </div>
   </div>
 </div>
