@@ -1,11 +1,21 @@
-<ul>
-  <li *ngFor="let post of userPosts">
-    <PostExtract
-      [body]="post.body"
-      [author]="post.user.email"
-      [url]="'post/' + post.id"
-      [avatar]="post.user.avatar"
-    ></PostExtract>
-    <auth-links [id]="post.id"></auth-links>
-  </li>
-</ul>
+<div class="profile">
+  <div class="new-post mb-6 text-center py-8 border-b-2 border-orange-300">
+    <a
+      [routerLink]="['post', 'new']"
+      class=" inline-block px-5 py-2 rounded bg-green-500 text-white"
+      >New Post</a
+    >
+  </div>
+  <ul>
+    <li *ngFor="let post of userPosts">
+      <PostExtract
+        [title]="post.title"
+        [body]="post.body"
+        [author]="post.user.email"
+        [url]="'post/' + post.id"
+        [avatar]="post.user.avatar"
+      ></PostExtract>
+      <auth-links [id]="post.id"></auth-links>
+    </li>
+  </ul>
+</div>
