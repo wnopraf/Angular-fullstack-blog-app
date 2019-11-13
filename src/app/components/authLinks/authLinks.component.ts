@@ -14,8 +14,10 @@ export class AuthLInks {
   showModal = () => {
     if (this.open) {
       this.open = false
+      document.body.classList.remove('overflow-hidden')
     } else {
       this.open = true
+      document.body.classList.add('overflow-hidden')
     }
   }
   delete = () => {
