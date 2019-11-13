@@ -79,7 +79,7 @@ export class LoginComponent {
             console.log(data, 'res token')
             if (data.token) {
               this.auth.setToken(data.token)
-              this.router.navigate(['/'])
+              this.router.navigate(['/user/dashboard'])
             }
           },
           error: e => {
