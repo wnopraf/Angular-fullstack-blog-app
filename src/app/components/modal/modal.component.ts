@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core'
-import { ModalEvent } from 'src/app/services/modalEvent.service'
 
 @Component({
   selector: 'modal',
@@ -12,8 +11,6 @@ export class Modal {
   @Input() modalMessage: string = 'Default modal message'
   @Input() confirmationMessage: string = 'Default confirmation message'
   @Input() isOpen: boolean
-
-  constructor(private event: ModalEvent) {}
 
   confirmModal(confirmation?: string) {
     console.log('confirmation', confirmation, this.openModal)
