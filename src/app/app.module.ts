@@ -19,6 +19,7 @@ import { NotAuth } from './components/notAuth/notAuthorized.component'
 import { PostForm } from './components/postForm/postForm.component'
 import { CreatePost } from './components/createPost/createPost.component'
 import { UpdatePost } from './components/updatePost/updatePost.component'
+import { Modal } from './components/modal/modal.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UpdatePost } from './components/updatePost/updatePost.component'
     NotAuth,
     PostForm,
     CreatePost,
-    UpdatePost
+    UpdatePost,
+    Modal
   ],
   imports: [
     BrowserModule,
