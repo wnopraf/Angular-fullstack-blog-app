@@ -1,10 +1,17 @@
 .modal_button {
   @apply px-4 py-2 border;
 }
-
+h1,
+h2,
+h3 {
+  @apply py-2;
+}
 h1 {
   @apply text-4xl;
 }
 h3 {
   @apply text-3xl;
+}
+.bt {
+  @apply inline-block px-4 py-1;
 }
