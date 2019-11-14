@@ -1,5 +1,7 @@
 <div class="actions py-4">
-  <a [routerLink]="['post', id, 'update']" class="bt bg-yellow-300 mr-2"
+  <a
+    [routerLink]="['/user/dashboard/post', id, 'update']"
+    class="bt bg-yellow-300 mr-2"
     >Update</a
   >
   <button (click)="showModal()" class="bt bg-red-400">Delete</button>
