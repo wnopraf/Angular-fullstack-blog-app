@@ -1,9 +1,9 @@
-<div>
+<div class="my-5">
   <h1 class="text-5xl py-3">{{ title }}</h1>
   <div class="flex items-center mb-2">
     <img [src]="avatar" alt="avatar" class="w-10 mr-2" />
     <span>{{ author }}</span>
   </div>
-  <p>{{ extract() }}</p>
-  <a routerLink="{{ url }}"> post</a>
+  <p class="my-3">{{ extract() }}</p>
+  <a routerLink="{{ url }}" class="bt text-white bg-green-600">see full post</a>
 </div>
