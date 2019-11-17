@@ -1,27 +1,21 @@
-# AngularBlog
+# Full stack angular blog app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+## Backend
 
-## Development server
+- Custom api made with json-server and lowdb as db.
+- Use faker to generate random data.
+- Custom authentication and authorization middelware.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Frontend
 
-## Code scaffolding
+- Use lowdb as browser db.
+- Contains frontend authorization logic.
+- Use tailwind as css framework.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Test
 
-## Build
+- Use jest as testing framework.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Develop
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run npm run app to run the app in dev mode.
