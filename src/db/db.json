@@ -168,13 +168,6 @@
       "image": "http://lorempixel.com/640/480/nightlife"
     },
     {
-      "id": "i56U-FSTBA",
-      "userId": "7FwNObIgL",
-      "image": "http://lorempixel.com/640/480/nature",
-      "title": "National Functionality Planner at saas",
-      "body": "body updated"
-    },
-    {
       "id": "ubCv7YTiIM",
       "userId": "mswCnh1Ap",
       "title": "Legacy Accountability Engineer",
@@ -383,6 +376,27 @@
       "title": "Legacy Operations Strategist",
       "body": "Aliquid et dolorem ut quis. Est dolor qui nam voluptatem fugiat aperiam. Autem facere ut incidunt accusamus reprehenderit nisi. Explicabo aut sed officia aperiam ipsum repellat ducimus accusantium. Eaque quia ut porro accusamus. Aspernatur eum autem occaecati veritatis ipsam numquam.\n \rNemo fugit earum. Rerum nobis sed ratione. Numquam enim voluptatem laudantium consequatur.\n \rQuasi reprehenderit distinctio esse tenetur. Nesciunt rem id quia sunt asperiores laboriosam ea molestiae. Aut occaecati et ut tempore deserunt aspernatur quasi est rerum.",
       "image": "http://lorempixel.com/640/480/cats"
+    },
+    {
+      "id": "kpk6zGl",
+      "userId": "7FwNObIgL",
+      "image": "http://lorempixel.com/640/480/abstract",
+      "title": "Reset",
+      "body": "The first post of a new era. Again upadated"
+    },
+    {
+      "id": "TvxoJvm",
+      "userId": "7FwNObIgL",
+      "image": "http://lorempixel.com/640/480/abstract",
+      "title": "post del vecino primer",
+      "body": "un posito desde la casa del vecino. Por cierto actualizado"
+    },
+    {
+      "userId": "7FwNObIgL",
+      "image": "http://lorempixel.com/640/480/cats",
+      "title": "Otro post line",
+      "body": "Queremos ver la linea separatoría",
+      "id": "mvrc0bp"
     }
   ],
   "count": []
