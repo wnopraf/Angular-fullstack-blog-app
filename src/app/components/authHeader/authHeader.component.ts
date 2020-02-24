@@ -20,7 +20,6 @@ export class AuthHeader {
         })
       )
       .subscribe(data => {
-        console.log(data, 'router - data')
         this.isLogged = this.auth.auth()
 
         this.user = this.isLogged && this.auth.getUser()

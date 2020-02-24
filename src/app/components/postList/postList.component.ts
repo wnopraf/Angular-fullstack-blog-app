@@ -13,7 +13,6 @@ export class PostList implements OnInit {
 
   ngOnInit() {
     this.http.get<Post[]>(this.postResource).subscribe(data => {
-      console.log(data, 'data from postlist')
       this.postData = data
     })
   }

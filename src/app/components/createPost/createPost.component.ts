@@ -38,11 +38,9 @@ export class CreatePost {
         .post('http://localhost:3000/posts', jsonPost, headers)
         .subscribe(
           next => {
-            console.log('Post posted correctly', next)
             this.router.navigate(['/user/dashboard'])
           },
           err => {
-            console.log(err, 'post error')
             this.router.navigate(['/server-error'])
           }
         )

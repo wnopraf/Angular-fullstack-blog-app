@@ -41,7 +41,6 @@ export class LoginComponent {
     this.password = this.loginForm.get('password') as FormControl
   }
   displayErrors(errors: { [key: string]: any }) {
-    console.log(errors, errors)
     let msg: string[] = []
     for (const [errorKey, errorMsg] of Object.entries(errors)) {
       switch (errorKey) {
@@ -76,14 +75,12 @@ export class LoginComponent {
         })
         .subscribe({
           next: data => {
-            console.log(data, 'res token')
             if (data.token) {
               this.auth.setToken(data.token)
               this.router.navigate(['/user/dashboard'])
             }
           },
           error: e => {
-            console.log(e, 'error in response')
             this.serverValidation = e.error
             this.loginForm.reset()
           }

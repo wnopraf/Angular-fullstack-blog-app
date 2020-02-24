@@ -21,7 +21,6 @@ export class PostForm implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   displayErrors(errors: { [key: string]: any }) {
-    console.log(errors, errors)
     let msg: string[] = []
     for (const [errorKey, errorMsg] of Object.entries(errors)) {
       switch (errorKey) {

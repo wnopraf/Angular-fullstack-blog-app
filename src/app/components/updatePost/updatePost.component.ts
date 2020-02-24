@@ -43,11 +43,9 @@ export class UpdatePost implements OnInit {
       const jsonPost = JSON.stringify(newPost)
       this.http.put(this.url, jsonPost, headers).subscribe(
         next => {
-          console.log('Post updated correctly', next)
           this.router.navigate(['/user/dashboard'])
         },
         err => {
-          console.log(err, 'post error')
           this.router.navigate(['/server-error'])
         }
       )
@@ -68,9 +66,7 @@ export class UpdatePost implements OnInit {
   }
 
   ngOnInit() {
-    console.log('update comp init')
     this.getPostData().subscribe((post: Post) => {
-      console.log(post, 'post from update')
       this.post = post
     })
   }

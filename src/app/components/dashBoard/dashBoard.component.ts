@@ -16,15 +16,11 @@ export class DashBoard implements OnInit {
     this.router.events
       .pipe(filter((event: RouterEvent) => event instanceof NavigationEnd))
       .subscribe((event: RouterEvent) => {
-        console.log('dashboard navigation', event)
-
         this.fetch.get().subscribe((data: Post[]) => {
-          console.log('data updated', data)
           this.userPosts = data
         })
       })
     this.fetch.get().subscribe((data: Post[]) => {
-      console.log('first data load', data)
       this.userPosts = data
     })
   }

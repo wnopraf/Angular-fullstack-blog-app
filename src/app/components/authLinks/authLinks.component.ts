@@ -28,8 +28,6 @@ export class AuthLInks {
       const url = `http://localhost:3000/posts/${this.id}`
       this.http.delete(url, headers).subscribe(
         data => {
-          console.log('delete', data)
-
           this.router.navigate(['/user/dashboard'])
         },
         error => {

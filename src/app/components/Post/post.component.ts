@@ -10,7 +10,6 @@ export class PostComponent {
   post: Post
   constructor(private route: ActivatedRoute) {
     this.route.data.subscribe(({ FetchPost }) => {
-      console.log(FetchPost, 'post data')
       this.post = FetchPost
     })
   }

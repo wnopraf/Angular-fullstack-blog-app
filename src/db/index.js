@@ -31,8 +31,6 @@ function fillRandomUser(userNumber = 10) {
 function belongTo(parentCollection, childCollection, childNumber = 5) {
   parentCollection
     .forEach(e => {
-      console.log('iter')
-
       let i = 0
       while (i < childNumber) {
         childCollection

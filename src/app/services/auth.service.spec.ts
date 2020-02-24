@@ -21,7 +21,7 @@ describe('Auth service', () => {
   let currentDate
   beforeEach(() => {
     auth.removeToken()
-    console.log('Current db state', db.getState())
+
     currentDate = Math.floor(Date.now() / 1000)
   })
   test('Setting token', () => {
@@ -30,7 +30,7 @@ describe('Auth service', () => {
   })
   test('Getting decoded token', () => {
     db.set('decToken', mockToken).write()
-    console.log(db.getState())
+
     expect(auth.getUser()).toEqual({
       id: '6sis6ky',
       email: 'reto@baylon.com ',
@@ -47,8 +47,5 @@ describe('Auth service', () => {
     db.set('decToken', mockToken).write()
     expect(mockToken.exp).toBeLessThan(currentDate)
     expect(auth.auth()).toBe(false)
-  })
-  afterEach(() => {
-    console.log('Current db state', db.getState())
   })
 })
